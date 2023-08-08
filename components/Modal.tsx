@@ -56,8 +56,10 @@ const Modal: React.FC<ModalProps> = ({
             z-50
             outline-none
             focus:outline-none
-            bg-neutral-800
-            bg-opacity-70
+            bg-neutral-700
+            bg-opacity-[40%]
+            backdrop-blur-sm
+            
             ">
                 <div className="
             relative
@@ -75,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({
                     h-full
                     lg:h-auto
                     border-0
-                    rounded-lg
+                    rounded-3xl
                     shadow-lg
                     relative
                     flex
