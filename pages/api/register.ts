@@ -7,13 +7,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(405).json({ message: "Method not allowed" })
     }
 
-    try{
-        const {email, username, name, password} = req.body
+    try {
+        const { email, username, name, password } = req.body
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
         const user = await prisma.user.create({
-            data:{
+            data: {
                 email,
                 username,
                 name,
@@ -23,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         return res.status(200).json(user);
     }
-    catch (e){
+    catch (e) {
         console.log(e)
         return res.status(400).end()
     }
