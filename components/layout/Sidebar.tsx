@@ -9,7 +9,7 @@ import { signOut } from 'next-auth/react';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
-    
+
     const items = [
         {
             label: 'Home',
@@ -50,7 +50,7 @@ const Sidebar = () => {
                         />
                     ))}
                     {currentUser &&
-                        <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" />}
+                        <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="O5ROJ" />}
                     <SidebarTweetButton />
                 </div>
             </div>

@@ -24,13 +24,14 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     const loginModal = useLoginModal();
     const handleClick = useCallback(() => {
         if (onClick) {
-            console.log("Onclick!")
+            console.log("Onclick!" + onClick.toString())
             return onClick
         }
         if (auth && !currentUser) {
             loginModal.onOpen();
         }
         else if (href) {
+            console.log("href")
             router.push(href)
         }
     }, [router, onClick, href, currentUser, auth, loginModal])
