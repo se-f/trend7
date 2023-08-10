@@ -25,7 +25,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     const handleClick = useCallback(() => {
         if (onClick) {
             console.log("Onclick!" + onClick.toString())
-            return onClick
+            return onClick();
         }
         if (auth && !currentUser) {
             loginModal.onOpen();

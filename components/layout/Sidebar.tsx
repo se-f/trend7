@@ -50,7 +50,7 @@ const Sidebar = () => {
                         />
                     ))}
                     {currentUser &&
-                        <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="O5ROJ" />}
+                        <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Sign out" />}
                     <SidebarTweetButton />
                 </div>
             </div>
