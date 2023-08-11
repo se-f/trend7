@@ -28,7 +28,7 @@ const Sidebar = () => {
         // },
         {
             label: 'Profile',
-            href: '/users/777',
+            href: `/users/${currentUser?.id}`,
             icon: FaUser,
             auth: true
         }
