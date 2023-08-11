@@ -4,6 +4,7 @@ import { format } from "date-fns"
 import { useMemo } from "react";
 import Button from "../Button";
 import { BiCalendar } from "react-icons/bi";
+import useEditModal from "@/hooks/useEditModal";
 
 interface UserBioProps {
     userId: string;
@@ -14,6 +15,8 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     const { data: currentUser } = useCurrentUser();
     const { data: fetchedUser } = useUser(userId);
 
+    const editModal = useEditModal();
+
     const createdAt = useMemo(() => {
         if (!fetchedUser?.createdAt) return null;
         return (format(new Date(fetchedUser.createdAt), 'MMMM yyyy'))
@@ -22,7 +25,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     return (
         <div className="border-b-[1px] border-neutral-800 pb-4">
             <div className="flex justify-end p-2">
-                {currentUser?.id === fetchedUser?.id ? (<Button secondary label="Edit" onClick={() => { }} />) : (
+                {currentUser?.id === fetchedUser?.id ? (<Button secondary label="Edit" onClick={() => editModal.onOpen()} />) : (
                     <Button label="Follow" onClick={() => { }} secondary />
                 )}
             </div>
@@ -33,7 +36,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
                 </div>
 
                 <div className="flex flex-col mt-4">
-                    <p className="text-white">{fetchedUser?.bio} lorem </p>
+                    <p className="text-white">{fetchedUser?.bio} </p>
                     <div className="flex flex-row items-center gap-2 mt-4 text-neutral-500">
                         <BiCalendar size={24} />
                         <p className=""> Joined {createdAt}</p>
