@@ -8,9 +8,7 @@ export default async function handler(req: NextApiRequest,
     }
 
     try {
-        const userId = req.query;
-        console.log("userId=");
-        console.log(userId);
+        const { userId } = req.query;
         if (!userId || typeof userId != "string") {
             console.log("INVALID ID IN: [userID].ts")
             throw new Error("Invalid user id")
@@ -22,7 +20,7 @@ export default async function handler(req: NextApiRequest,
             }
         })
 
-        const followersCount = prisma.user.count({
+        const followersCount = await prisma.user.count({
             where: {
                 followingIds: {
                     has: userId
