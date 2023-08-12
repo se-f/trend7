@@ -67,10 +67,11 @@ const Modal: React.FC<ModalProps> = ({
             lg:w-2/5
             lg:min-w-[600px]
             my-6
-        
+
             mx-auto
             lg:max-w-3xl
             h-full
+            lg:h-auto
             ">
                     {/*content*/}
 

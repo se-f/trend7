@@ -69,10 +69,25 @@ const Form: React.FC<FormProps> = ({
                          text-[20px]
                          placeholder-neutral-500
                          text-white
-
                          "
 
                             placeholder={placeholder}></textarea>
+
+                            <hr className="
+                            opacity-0
+                            peer-focus:opacity-100
+                            h-[1px]
+                            w-full
+                            border-neutral-700
+                            transition"></hr>
+
+                            <div className="
+                            mt-4
+                            flex
+                            flex-row
+                            justify-end">
+                                <Button label="Post" disabled={isLoading || !body } onClick={onSubmit}/> 
+                            </div>
                     </div>
 
                 </div>

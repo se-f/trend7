@@ -15,7 +15,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
     return (
         <input disabled={disabled} onChange={onChange} value={value}
-        placeholder={placeholder} type={type} className="
+            placeholder={placeholder} type={type} className="
         w-full
         p-4
         text-lg
@@ -28,9 +28,9 @@ const Input: React.FC<InputProps> = ({
         focus:border-sky-500
         focus:border-2
         transition
-        disabled: bg-neutral-900
-        disabled: opacity-70
-        disabled: cursor-not-allowed
+        disabled:bg-neutral-900
+        disabled:opacity-70
+        disabled:cursor-not-allowed
         " />
     );
 
