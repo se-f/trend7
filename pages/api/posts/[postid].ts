@@ -10,16 +10,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
 
 
-        const { postid } = req.query
+        const { postId } = req.query
 
 
-        if (!postid || typeof postid !== "string") {
+        if (!postId || typeof postId !== "string") {
             throw new Error("Invalid post id (POS1)")
         }
 
         const post = await prisma.post.findUnique({
             where: {
-                id: postid
+                id: postId
             },
             include: {
                 user: true,
