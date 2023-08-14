@@ -29,7 +29,7 @@ const PostItem: React.FC<PostItemProps> = ({
     }, [router, data.user.id])
 
     const goToPost = useCallback(() => {
-        router.push(`/post/${data.id}`)
+        router.push(`/posts/${data.id}`)
     }, [data.id])
 
     const onLike = useCallback((event: any) => {
@@ -81,9 +81,9 @@ const PostItem: React.FC<PostItemProps> = ({
                     </div>
                     <div className="flex flex-row items-center mt-3 gap-10">
 
-                        <div 
-                        onClick={onLike}
-                        className="flex flex-row items-center text-neutral-500 gap-2 cursor-pointer transition hover:text-red-500">
+                        <div
+                            onClick={onLike}
+                            className="flex flex-row items-center text-neutral-500 gap-2 cursor-pointer transition hover:text-red-500">
                             <AiOutlineHeart size={20} />
                             <p>{data.comments?.length || 0}</p>
                         </div>
