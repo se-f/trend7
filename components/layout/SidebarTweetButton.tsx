@@ -48,7 +48,7 @@ const SidebarTweetButton = () => {
                 text-center
                 font-semibold
                 text-white
-                text-[18px]">What's up?</p>
+                text-[18px]">Whats up?</p>
             </div>
         </div>
     )

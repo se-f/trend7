@@ -34,7 +34,7 @@ const PostItem: React.FC<PostItemProps> = ({
 
     const goToPost = useCallback(() => {
         router.push(`/posts/${data.id}`)
-    }, [data.id])
+    }, [data.id, router])
 
     const onLike = useCallback((event: any) => {
         event.stopPropagation();
