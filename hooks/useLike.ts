@@ -34,7 +34,6 @@ const useLike = ({ postId, userId }: { postId: string; userId?: string }) => {
       } else {
         request = () => axios.post("/api/like", { postId });
       }
-      console.log("REQUEST TIME");
       await request();
 
       mutateFetchedPosts();
