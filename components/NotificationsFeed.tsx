@@ -25,9 +25,9 @@ const NotificationsFeed = () => {
       {fetchedNotifications.map((notification: Record<string, any>) => (
         <div
           key={notification.id}
-          className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800"
+          className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800 hover:bg-neutral-900 transition"
         >
-          <BsTwitter color="white" size={32} />
+          <img src="images/logoSW2.png" height="32" width="32"></img>
           <p className="text-white">{notification.body}</p>
         </div>
       ))}

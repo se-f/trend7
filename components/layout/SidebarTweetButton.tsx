@@ -1,19 +1,27 @@
+import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { FaFeather } from "react-icons/fa";
 
 const SidebarTweetButton = () => {
-    const router = useRouter();
+  const router = useRouter();
+  const { data: currentUser } = useCurrentUser();
 
-    const loginModal = useLoginModal();
+  const loginModal = useLoginModal();
 
-    const onClick = useCallback(() => {
-        loginModal.onOpen();
-    }, [loginModal])
-    return (
-        <div onClick={onClick}>
-            <div className="
+  const onClick = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
+
+    router.push("/");
+  }, [loginModal, router, currentUser]);
+
+  return (
+    <div onClick={onClick}>
+      <div
+        className="
             mt-3
             lg:hidden
             rounded-full
@@ -23,35 +31,42 @@ const SidebarTweetButton = () => {
             flex
             items-center
             justify-center
-            bg-sky-500
+            bg-purple-700
             hover:bg-opacity-80
             transition
-            cursor-pointer">
-                <FaFeather size={24} color="white" />
-            </div>
+            cursor-pointer"
+      >
+        <FaFeather size={24} color="white" />
+      </div>
 
-            <div className="
+      <div
+        className="
             mt-3
             hidden
             lg:block
             px-4
             py-2
             rounded-full
-            bg-sky-500
+            bg-purple-700
             hover:bg-opacity-80
             transition
             cursor-pointer
-            ">
-                <p className="
+            "
+      >
+        <p
+          className="
                 hidden
                 lg:block
                 text-center
                 font-semibold
                 text-white
-                text-[18px]">Whats up?</p>
-            </div>
-        </div>
-    )
-}
+                text-[18px]"
+        >
+          Whats up?
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default SidebarTweetButton;
