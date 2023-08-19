@@ -1,5 +1,4 @@
-import { BsTwitter } from "react-icons/bs";
-
+import Image from "next/image"
 import useNotifications from "@/hooks/useNotifications";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { useEffect } from "react";
@@ -27,7 +26,7 @@ const NotificationsFeed = () => {
           key={notification.id}
           className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800 hover:bg-neutral-900 transition"
         >
-          <img src="images/logoSW2.png" height="32" width="32"></img>
+          <Image alt="logoSW2" src="/images/logoSW2.png" height="32" width="32"/>
           <p className="text-white">{notification.body}</p>
         </div>
       ))}

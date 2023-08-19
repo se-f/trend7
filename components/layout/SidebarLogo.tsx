@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import Image from "next/image";
 const SidebarLogo = () => {
   const router = useRouter();
 
@@ -22,7 +22,7 @@ const SidebarLogo = () => {
         lg:block
         "
       >
-        <img src="/images/logoW2.png" alt="logoW"></img>
+        <Image src="/images/logoW2.png" alt="logoW" height="200" width="200" />
         {/* <p className="text-white font-semibold text-2xl">FFF</p> */}
       </div>
 
@@ -42,7 +42,7 @@ const SidebarLogo = () => {
         lg:hidden
         "
       >
-        <img src="/images/logoSW2.png" alt="logoW"></img>
+        <Image alt="LOGOSW2" src="/images/logoSW2.png" width="50" height='50' />
         {/* <p className="text-white font-semibold text-2xl">FFF</p> */}
       </div>
     </div>
