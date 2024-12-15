@@ -42,9 +42,8 @@ const SidebarLogo = () => {
         lg:hidden
         "
       >
-        <Image alt="LOGOSW2" src="/images/logoSW2.png" width="50" height='50' />
-        {/* <p className="text-white font-semibold text-2xl">FFF</p> */}
-      </div>
+        <Image alt="LOGOSW2" src="/images/logoW.png" width="50" height='50' />
+        </div>
     </div>
   );
 };
